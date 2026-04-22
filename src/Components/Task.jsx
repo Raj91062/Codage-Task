@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 const Task = () => {
   const [value, setValue] = useState("");
-  const [value1, setValue1] = useState("");
 
   const [description, setDescription] = useState([]);
   const [todos, setTodos] = useState([]);
@@ -19,11 +18,9 @@ const Task = () => {
       setEditIndex(null);
     } else {
       setTodos([...todos, value]);
-      setDescription([...description, value1]);
     }
 
     setValue("");
-    setValue1("");
   };
 
   const deleteTodo = (indexToDelete) => {
@@ -49,15 +46,7 @@ const Task = () => {
           onChange={(e) => setValue(e.target.value)}
         />
 
-        <div>
-          <textarea
-            type="text"
-            value={value1}
-            placeholder="Enter Description"
-            className="border-2 mt-5 ml-2 w-53 md:w-100 p-2 h-auto w- font-semibold outline-0 rounded-2xl"
-            onChange={(e) => setValue1(e.target.value1)}
-          />
-        </div>
+
 
         <button
           onClick={addTodo}
